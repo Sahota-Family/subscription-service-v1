@@ -1,0 +1,34 @@
+### General properties ###
+info:
+  artifactId: @project.artifactId@
+  description: @project.description@
+  groupId: @project.groupId@
+  name: @project.name@
+  version: @project.version@
+
+management:
+  endpoint:
+    health:
+        show-details: always
+    shutdown:
+        enabled: false
+  endpoints:
+      web:
+          exposure:
+              include: "health,info,loggers"
+  health:
+      diskspace:
+          enabled: false
+
+### Database properties (move somewhere else) ###
+spring:
+  datasource:
+      url: "jdbc:sqlserver://subscription-2.cfuct03cjigq.us-east-2.rds.amazonaws.com:1433;databaseName=subscriptions"
+      driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+      username:
+      password:
+      hikari:
+        maximum-pool-size: 100
+        idle-timeout: 30000
+        connection-test-query: select 1
+        allow-pool-suspension: true
