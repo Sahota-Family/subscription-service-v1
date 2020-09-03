@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.sahota.subscription-tracker' is invalid and this project uses 'com.sahota.subscriptiontracker' instead.
+* The original package name 'com.sahota.subscription-service-v1' is invalid and this project uses 'com.sahota.subscriptiontracker' instead.
 
 # Getting Started
 

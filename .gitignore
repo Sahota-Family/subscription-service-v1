@@ -11,4 +11,4 @@ mvnw
 mvnw.cmd
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .idea/
-subscription-tracker.iml
+subscription-service-v1.iml
