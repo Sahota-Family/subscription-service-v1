@@ -32,3 +32,10 @@ spring:
         idle-timeout: 30000
         connection-test-query: select 1
         allow-pool-suspension: true
+
+---
+
+### Profile specific stuff here
+spring:
+  profiles: local
+
