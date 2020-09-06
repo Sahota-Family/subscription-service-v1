@@ -39,3 +39,12 @@ spring:
 spring:
   profiles: local
 
+---
+
+spring:
+  profiles: qa
+
+---
+
+spring:
+  profiles: prod
