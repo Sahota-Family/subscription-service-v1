@@ -10,5 +10,11 @@ import org.springframework.stereotype.Component;
 public interface PersonMapper {
 
     @Select("SELECT PersonID, FirstName, LastName, DateCreated, LastUpdated, LastUpdatedBy, EmailAddress FROM subscription.person")
-    Person[] getAllPeople();
+    Person[] getAllUsers();
+
+    @Select("SELECT PersonID, FirstName, LastName, DateCreated " +
+            "FROM subscription.person " +
+            "WHERE " +
+            "PersonID = ${userId}")
+    Person getUserById(Long userId);
 }

@@ -1,7 +1,8 @@
 package com.sahota.subscriptiontracker.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sahota.subscriptiontracker.mapper.PersonMapper;
-import com.sahota.subscriptiontracker.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,8 @@ public class PersonController {
 
     PersonMapper personMapper;
 
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
     @Autowired
     public PersonController(PersonMapper personMapper) {
 
@@ -18,15 +21,8 @@ public class PersonController {
     }
 
     @GetMapping("/test")
-    public String test() {
+    public String test() throws JsonProcessingException {
 
-        StringBuilder sb = new StringBuilder();
-
-        for (Person person : personMapper.getAllPeople()) {
-
-            sb.append(person.toString());
-            sb.append('\n');
-        }
-        return sb.toString();
+        return objectMapper.writeValueAsString(personMapper.getUserById(1L));
     }
 }
